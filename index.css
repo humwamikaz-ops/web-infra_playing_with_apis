@@ -3,12 +3,40 @@
 }
 
 body {
+    background: 2D6A4F;
+    color: white;
     font-family:Arial, Helvetica, sans-serif;
-    background-color: #1B4332;
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+header {
+    padding: 24px;
+    background: #081C15;
+    
+
+}
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+section h2 {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1;
+    color: white;
+    background: url("moon.gif") bottom center /cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 footer {
-    background-color: #081C15;
-    padding:10px;
+    padding: 24px;
+    background: #081C15;
     text-align: center;
     color:white;
+    font-size: 0.9rem;
 }
