@@ -12,13 +12,12 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 header {
-    padding: 24px;
+    padding: 5px;
     background: #081C15;
-    
+
 
 }
 main {
-    max-width: 960px;
     margin: 0 auto;
     padding: 40px 20px;
 }
@@ -28,7 +27,7 @@ section h2 {
     font-weight: 600;
     line-height: 1;
     color: white;
-    background: url("moon.gif") bottom center /cover;
+    background: url("fire.gif") bottom center /cover;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
