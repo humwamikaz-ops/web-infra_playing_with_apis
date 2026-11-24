@@ -4,8 +4,22 @@ var Region = document.getElementById("region");
 var Sorting = document.getElementById("sort");
 var ElementStatus = document.getElementById("status");
 const countrygrid = document.getElementById("countries");
+const CACHE_KEY = "countries_cache_v1";
+const CACHE_MS = 24 * 60 * 60 * 1000;
 let allCountries = [];
-
+async function getCountries () {
+    try {
+        const saved = JSON.parse(localStorage.getItem(CACHE_KEY));
+        if (saved && Date.now() - saved.time < CACHE_MS) return saved.list;
+    }
+    catch (e) {}
+    const list = await fetchAllCountries();
+    try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ time: Date.now(), list }));
+    }
+    catch(e) {}
+    return list;
+}
 async function fetchAllCountries() {
     const fields = "names.common,region,population,area.kilometers,capitals,flag.url_png,flag.description";
     let offset = 0;
@@ -26,7 +40,7 @@ async function fetchCountries() {
     ElementStatus.textContent = "Loading";
     countrygrid.innerHTML = "";
     try {
-        allCountries = await fetchAllCountries();
+        allCountries = await getCountries();
         console.log("Countries fetched", allCountries.length);
         updateDisplay();
     }
