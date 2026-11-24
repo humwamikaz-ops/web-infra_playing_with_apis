@@ -46,9 +46,9 @@ function renderCountries(countries) {
         const name = country.names?.common || "Unknown";
         const region = country.region || "N/A";
         const population = typeof country.population === "number" ? country.population.toLocaleString() : "N/A";
-        const areaKilometeres = country.area?.kilometers;
+        const areaKilometers = country.area?.kilometers;
         const area = typeof areaKilometers === "number"
-        ? `${country.area.toLocaleString()} km2`
+        ? `${areaKilometers.toLocaleString()} km²`
         :"N/A";
         const flagURL = country.flag?.url_png || "";
         const flagAlt = country.flag?.description || `Flag of ${name}`;
@@ -74,8 +74,8 @@ function updateDisplay() {
     const selectedRegion = (Region?.value || "").toLowerCase();
     const sortBy = Sorting?.value || "name";
     const filtered = allCountries.filter((country) => {
-        const name = (country.name?.common || "").toLowerCase;
-        const region = (country.region || "").toLowerCase;
+        const name = (country.names?.common || "").toLowerCase();
+        const region = (country.region || "").toLowerCase();
         const matchesSearch = name.includes(query);
         const matchesRegion = !selectedRegion || region === selectedRegion || region.includes(selectedRegion);
         return matchesSearch && matchesRegion;
