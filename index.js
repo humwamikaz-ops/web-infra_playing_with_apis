@@ -43,10 +43,11 @@ function renderCountries(countries) {
     }
     ElementStatus.textContent = `Showing ${countries.length} ${countries.length === 1 ? "country" : "countries"}.`;
     countries.forEach((country) => {
-        const name = (country.name?.common || "Unknown").toLowerCase;
-        const region = (country.region || "N/A").toLowerCase;
+        const name = country.names?.common || "Unknown";
+        const region = country.region || "N/A";
         const population = typeof country.population === "number" ? country.population.toLocaleString() : "N/A";
-        const areaValue = country.area?.kilometers === "number"
+        const areaKilometeres = country.area?.kilometers;
+        const area = typeof areaKilometers === "number"
         ? `${country.area.toLocaleString()} km2`
         :"N/A";
         const flagURL = country.flag?.url_png || "";
@@ -57,10 +58,10 @@ function renderCountries(countries) {
         card.innerHTML = ` 
         ${flagURL ? `<img src="${flagURL}" alt="${flagAlt}" loading="lazy">` : ""}
         <div class="country-card-body" style="padding: 14px;">
-            <h3 style="margin: 0 0 8px;">${name}</h3>
-            <p style="margin: 4px 0;"><strong>Region:</strong> ${region}</p>
-            <p style="margin: 4px 0;"><strong>Population:</strong> ${population}</p>
-            <p style="margin: 4px 0;"><strong>Area:</strong> ${area}</p>
+            <h3>${name}</h3>
+            <p><strong>Region:</strong> ${region}</p>
+            <p><strong>Population:</strong> ${population}</p>
+            <p><strong>Area:</strong> ${area}</p>
 
         </div>
         `;
@@ -73,8 +74,8 @@ function updateDisplay() {
     const selectedRegion = (Region?.value || "").toLowerCase();
     const sortBy = Sorting?.value || "name";
     const filtered = allCountries.filter((country) => {
-        const name = (country.name?.common || "");
-        const region = (country.region || "");
+        const name = (country.name?.common || "").toLowerCase;
+        const region = (country.region || "").toLowerCase;
         const matchesSearch = name.includes(query);
         const matchesRegion = !selectedRegion || region === selectedRegion || region.includes(selectedRegion);
         return matchesSearch && matchesRegion;
