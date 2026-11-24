@@ -43,10 +43,10 @@ function renderCountries(countries) {
     }
     ElementStatus.textContent = `Showing ${countries.length} ${countries.length === 1 ? "country" : "countries"}.`;
     countries.forEach((country) => {
-        const name = country.names?.common || "Unknown";
-        const region = country.region || "N/A";
+        const name = (country.name?.common || "Unknown").toLowerCase;
+        const region = (country.region || "N/A").toLowerCase;
         const population = typeof country.population === "number" ? country.population.toLocaleString() : "N/A";
-        const areavValue = country.area?.kilometers === "number"
+        const areaValue = country.area?.kilometers === "number"
         ? `${country.area.toLocaleString()} km2`
         :"N/A";
         const flagURL = country.flag?.url_png || "";
@@ -59,8 +59,8 @@ function renderCountries(countries) {
         <div class="country-card-body" style="padding: 14px;">
             <h3 style="margin: 0 0 8px;">${name}</h3>
             <p style="margin: 4px 0;"><strong>Region:</strong> ${region}</p>
-            <p style="margin: 4px 0;"><strong>Population:</strong> ${region}</p>
-            <p style="margin: 4px 0;"><strong>Area:</strong> ${region}</p>
+            <p style="margin: 4px 0;"><strong>Population:</strong> ${population}</p>
+            <p style="margin: 4px 0;"><strong>Area:</strong> ${area}</p>
 
         </div>
         `;
@@ -86,11 +86,11 @@ function updateDisplay() {
 
         }
         if (sortBy === "area") {
-            return (b.area || 0) - (a.area || 0);
+            return (b.area?.kilometers || 0) - (a.area?.kilometers || 0);
 
         }
-        const nameA = a.name?.common || "";
-        const nameB = b.name?.common || "";
+        const nameA = a.names?.common || "";
+        const nameB = b.names?.common || "";
         return nameA.localeCompare(nameB);
 
     });
