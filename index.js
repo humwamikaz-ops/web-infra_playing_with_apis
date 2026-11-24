@@ -2,8 +2,8 @@ var LookForInput = document.getElementById("search");
 var SpecificSearch = document.querySelector(".nav input");
 var Region = document.getElementById("region");
 var Sorting = document.getElementById("sort");
-var ElementStatus = document.getElementById("sort");
-const ElementStatus = document.getElementById("countries");
+var ElementStatus = document.getElementById("countries");
+const countrygrid = document.getElementById("countries");
 let allCountries = [];
 
 
@@ -13,7 +13,7 @@ async function fetchCountries() {
     try {
         const url = "https://api.restcountries.com/countries/v5?limit=3&pretty=1";
         const response = await fetch(url, {
-            headers: {Authorization: 'Bearer ${API_KEY' }
+            headers: {Authorization: `Bearer ${API_KEY` }
 
         });
         if (!response.ok) {
@@ -22,6 +22,8 @@ async function fetchCountries() {
         }
         const data = await response.json();
         console.log("Countries fetched", data);
+        allCountries = Array.isArray(data) ? data : [];
+        updateDisplay();
     }
     catch (error) {
         console.log("Error:", error);
@@ -34,22 +36,22 @@ function renderCountries(countries) {
         ElementStatus.textcontent = "no matches found";
         return;
     }
-    ElementStatus.textContent = 'Showing ${countries.length} ${countries.length === 1 ? "country" : "countries"}.';
+    ElementStatus.textContent = `Showing ${countries.length} ${countries.length === 1 ? "country" : "countries"}.`;
     countries.forEach((country) => {
         const name = country.name?.common || "Unknown";
         const region = country.region || "N/A";
         const population = typeof country.population === "number" ? country.population.toLocaleString()
         : "N/A";
         const area = typeof country.area === "number"
-        ? '${country.area.toLocaleString()} km2'
+        ? `${country.area.toLocaleString()} km2`
         :"N/A";
         const flagURL =country.flags?.png || country.flags?.svg || "";
         const flagAlt = country.flags?.alt || 'Flag of ${name}';
         const card = document.createElement("div");
         card.className = "country-card";
 
-        card.innerHTML = '' 
-        ${flagURL ? '<img src="${flagUrl}" alt="${flagAlt}" loading="lazy">' : ""}
+        card.innerHTML = ` 
+        ${flagURL ? `<img src="${flagURL}" alt="${flagAlt}" loading="lazy">` : ""}
         <div class="country-card-body" style="padding: 14px;">
             <h3 style="margin: 0 0 8px;">${name}</h3>
             <p style="margin: 4px 0;"><strong>Region:</strong></p>
@@ -57,7 +59,7 @@ function renderCountries(countries) {
             <p style="margin: 4px 0;"><strong>Area:</strong></p>
 
         </div>
-        ';
+        `;
         countrygrid.appendChild(card);
 
     });
