@@ -2,29 +2,37 @@ var LookForInput = document.getElementById("search");
 var SpecificSearch = document.querySelector(".nav input");
 var Region = document.getElementById("region");
 var Sorting = document.getElementById("sort");
-var ElementStatus = document.getElementById("Status");
+var ElementStatus = document.getElementById("status");
 const countrygrid = document.getElementById("countries");
 let allCountries = [];
 
-
+async function fetchAllCountries() {
+    const fields = "names.common,region,population,area.kilometers,capitals,flag.url_png,flag.description";
+    let offset = 0;
+    let all = [];
+    let more = true;
+    while (more && offset < 500) {
+        const url = `https://api.restcountries.com/countries/v5?limit=100&offset=${offset}&response_fields=${fields}`;
+        const response = await fetch(url, {headers: {Authorization: `Bearer ${API_KEY}`}});
+        if (!response.ok) throw new Error("Request failed with status " + response.status);
+        const json = await response.json();
+        all = all.concat(json.data.objects);
+        more = json.data.meta.more;
+        offset += 100;
+    }
+    return all;
+}
 async function fetchCountries() {
     ElementStatus.textContent = "Loading";
     countrygrid.innerHTML = "";
     try {
-        const url = "https://api.restcountries.com/countries/v5?limit=3&pretty=1";
-        
-        if (!response.ok) {
-            throw new Error("request failed with status" + response.status);
-
-        }
-        const data = await response.json();
-        console.log("Countries fetched", data);
-        allCountries = Array.isArray(data) ? data : [];
+        allCountries = await fetchAllCountries();
+        console.log("Countries fetched", allCountries.length);
         updateDisplay();
     }
     catch (error) {
         console.log("Error:", error);
-        ElementStatus.textContent = "Could not fetch countries.  Try again later";
+        ElementStatus.textContent = "Could not fetch countries.  Try again later😓🙇🙏";
     }
 }
 function renderCountries(countries) { 
@@ -35,15 +43,14 @@ function renderCountries(countries) {
     }
     ElementStatus.textContent = `Showing ${countries.length} ${countries.length === 1 ? "country" : "countries"}.`;
     countries.forEach((country) => {
-        const name = country.name?.common || "Unknown";
+        const name = country.names?.common || "Unknown";
         const region = country.region || "N/A";
-        const population = typeof country.population === "number" ? country.population.toLocaleString()
-        : "N/A";
-        const area = typeof country.area === "number"
+        const population = typeof country.population === "number" ? country.population.toLocaleString() : "N/A";
+        const areavValue = country.area?.kilometers === "number"
         ? `${country.area.toLocaleString()} km2`
         :"N/A";
-        const flagURL =country.flags?.png || country.flags?.svg || "";
-        const flagAlt = country.flags?.alt || `Flag of ${name}`;
+        const flagURL = country.flag?.url_png || "";
+        const flagAlt = country.flag?.description || `Flag of ${name}`;
         const card = document.createElement("div");
         card.className = "country-card";
 
@@ -66,8 +73,8 @@ function updateDisplay() {
     const selectedRegion = (Region?.value || "").toLowerCase();
     const sortBy = Sorting?.value || "name";
     const filtered = allCountries.filter((country) => {
-        const name = (country.name?.common || "").toLowerCase();
-        const region = (country.region || "").toLowerCase();
+        const name = (country.name?.common || "");
+        const region = (country.region || "");
         const matchesSearch = name.includes(query);
         const matchesRegion = !selectedRegion || region === selectedRegion || region.includes(selectedRegion);
         return matchesSearch && matchesRegion;
