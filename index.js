@@ -57,7 +57,7 @@ function renderCountries(countries) {
 
         card.innerHTML = ` 
         ${flagURL ? `<img src="${flagURL}" alt="${flagAlt}" loading="lazy">` : ""}
-        <div class="country-card-body" style="padding: 14px;">
+        <div class="country-card-body">
             <h3>${name}</h3>
             <p><strong>Region:</strong> ${region}</p>
             <p><strong>Population:</strong> ${population}</p>
