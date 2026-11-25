@@ -20,14 +20,14 @@ function openDetail(country) {
     <p><strong>Capital:</strong> ${country.capitals?.[0]?.name || "N/A"}</p>
     <p><strong>Regoin:</strong> ${country.region || "N/A"} (${country.subregion || "N/A"})</p>
     <p><strong>Continent:</strong> ${listText(country.continents)}</p>
-    <p><strong>Population:</strong> ${typeof country.population === "number" ? country.population.toLocaleString() : "N/A"}</P
+    <p><strong>Population:</strong> ${typeof country.population === "number" ? country.population.toLocaleString() : "N/A"}</P>
     <p><strong>Landlocked:</strong> ${country.landlocked === true ? "Yes" : country.landlocked === false ? "No" : "N/A"}</p>
     <p><strong>Calling code:</strong> ${listText(country.calling_codes)}</p>
     <p><strong>Timezones:</strong> ${listText(country.timezones)}</p>
     `;
     detail.showModal();
 }
-detail.getElementById("detail-close").addEventListener("click", () => detail.closest());
+document.getElementById("detail-close").addEventListener("click", () => detail.closest());
 async function getCountries () {
     try {
         const saved = JSON.parse(localStorage.getItem(CACHE_KEY));
