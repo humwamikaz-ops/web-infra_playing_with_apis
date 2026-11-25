@@ -2,7 +2,7 @@
   "reportVersion": "1.0",
   "assignmentId": "assignment-1795093786003-prk98an",
   "assignmentName": "Playing Around with APIs",
-  "generatedAt": 1795627373584,
+  "generatedAt": 1795627977836,
   "metrics": {
     "assignmentId": "assignment-1795093786003-prk98an",
     "authorship": {
@@ -22778,6 +22778,31 @@
         "assignmentId": "assignment-1795093786003-prk98an",
         "aiClassification": "prohibited",
         "policyViolation": "agentic-use"
+      },
+      {
+        "id": 1032,
+        "timestamp": 1795627757740,
+        "tool": "ai",
+        "eventType": "code-generated",
+        "linesOfCode": 140,
+        "linesRemoved": 0,
+        "linesChanged": 140,
+        "charactersCount": 5063,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "detectionMethod": "large-paste",
+          "confidence": "high",
+          "isAgentGenerated": true
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "ai",
+        "detectionMethod": "large-paste",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an",
+        "aiClassification": "flag"
       }
     ],
     "fileReviews": [
@@ -22787,25 +22812,26 @@
         "tool": "ai",
         "reviewQuality": "thorough",
         "reviewScore": 100,
-        "isReviewed": false,
-        "linesGenerated": 245,
-        "linesChanged": 251,
-        "linesSinceReview": 119,
-        "linesAdded": 119,
+        "isReviewed": true,
+        "linesGenerated": 385,
+        "linesChanged": 391,
+        "linesSinceReview": 0,
+        "linesAdded": 140,
         "linesRemoved": 0,
-        "charactersCount": 9125,
-        "agentSessionId": "agent-session-1795627167479-d4b1d3lej",
+        "charactersCount": 14188,
+        "agentSessionId": "manual-session",
         "isAgentGenerated": true,
         "wasFileOpen": false,
         "firstGeneratedAt": 1795626367135,
-        "totalReviewTime": 162192,
+        "lastReviewedAt": 1795627972632,
+        "totalReviewTime": 843226,
         "language": "markdown",
-        "modificationCount": 3,
-        "totalTimeInFocus": 834514,
-        "scrollEventCount": 2,
+        "modificationCount": 4,
+        "totalTimeInFocus": 843226,
+        "scrollEventCount": 3,
         "cursorMovementCount": 1,
         "editsMade": false,
-        "lastOpenedAt": 1795627205270,
+        "lastOpenedAt": 1795627753395,
         "reviewSessionsCount": 0,
         "reviewedInTerminal": false
       },
@@ -23009,9 +23035,9 @@
   ],
   "studentIdentifier": "h.umwamikaz@alustudent.com",
   "repoUrl": "https://github.com/humwamikaz-ops/web-infra_playing_with_apis",
-  "repoHeadCommit": "fc170df1f007b16f512deb7a50d54bf5fb3b9d7d",
+  "repoHeadCommit": "b8e3ceb280838518b7204c5575282f4ca0f8550b",
   "integrity": {
     "algorithm": "sha256",
-    "hash": "f6c7efd482a5212bd4c50f78061f5ccacd6cba09fb84debcc43902cb15777f7b"
+    "hash": "8ed46cb8d702ecb2a82905f9fc066e2cca66620caaeec1b8786a5e98e33ff12b"
   }
 }

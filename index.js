@@ -27,7 +27,12 @@ function openDetail(country) {
     `;
     detail.showModal();
 }
-document.getElementById("detail-close").addEventListener("click", () => detail.close());
+const closeButton = document.getElementById("detail-close");
+
+closeButton.addEventListener("click", function() {
+    detail.close();
+});
+
 async function getCountries () {
     try {
         const saved = JSON.parse(localStorage.getItem(CACHE_KEY));
