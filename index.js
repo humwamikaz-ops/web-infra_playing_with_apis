@@ -27,7 +27,7 @@ function openDetail(country) {
     `;
     detail.showModal();
 }
-document.getElementById("detail-close").addEventListener("click", () => detail.closest());
+document.getElementById("detail-close").addEventListener("click", () => detail.close());
 async function getCountries () {
     try {
         const saved = JSON.parse(localStorage.getItem(CACHE_KEY));
