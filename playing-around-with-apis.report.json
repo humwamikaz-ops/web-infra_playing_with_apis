@@ -2,7 +2,7 @@
   "reportVersion": "1.0",
   "assignmentId": "assignment-1795093786003-prk98an",
   "assignmentName": "Playing Around with APIs",
-  "generatedAt": 1795624705992,
+  "generatedAt": 1795627373584,
   "metrics": {
     "assignmentId": "assignment-1795093786003-prk98an",
     "authorship": {
@@ -46,8 +46,8 @@
           "durationSeconds": 54883
         },
         "firstDetectedAt": 1795094083870,
-        "lastDetectedAt": 1795624450033,
-        "count": 8
+        "lastDetectedAt": 1795626367135,
+        "count": 9
       }
     ],
     "rawEvents": [
@@ -22436,9 +22436,379 @@
         "assignmentId": "assignment-1795093786003-prk98an",
         "aiClassification": "prohibited",
         "policyViolation": "agentic-use"
+      },
+      {
+        "id": 1017,
+        "timestamp": 1795626367135,
+        "tool": "ai",
+        "eventType": "code-generated",
+        "linesOfCode": 126,
+        "linesRemoved": 0,
+        "linesChanged": 126,
+        "charactersCount": 4677,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "detectionMethod": "large-paste",
+          "confidence": "high",
+          "isAgentGenerated": true
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "ai",
+        "detectionMethod": "large-paste",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an",
+        "aiClassification": "flag"
+      },
+      {
+        "id": 1018,
+        "timestamp": 1795626448077,
+        "tool": "claude-code",
+        "eventType": "code-generated",
+        "linesOfCode": 1,
+        "charactersCount": 4,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "manual": true,
+          "source": "manual-typing",
+          "duration": 2970
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "manual",
+        "detectionMethod": "manual-typing",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an"
+      },
+      {
+        "id": 1019,
+        "timestamp": 1795626485169,
+        "tool": "claude-code",
+        "eventType": "code-generated",
+        "linesOfCode": 1,
+        "charactersCount": 1,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "manual": true,
+          "source": "manual-typing",
+          "duration": 2001
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "manual",
+        "detectionMethod": "manual-typing",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an"
+      },
+      {
+        "id": 1020,
+        "timestamp": 1795626513459,
+        "tool": "claude-code",
+        "eventType": "code-generated",
+        "linesOfCode": 1,
+        "charactersCount": 76,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "manual": true,
+          "source": "manual-typing",
+          "duration": 26834
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "manual",
+        "detectionMethod": "manual-typing",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an"
+      },
+      {
+        "id": 1021,
+        "timestamp": 1795626521464,
+        "tool": "ai",
+        "eventType": "code-generated",
+        "linesOfCode": 0,
+        "linesRemoved": 6,
+        "linesChanged": 6,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "detectionMethod": "text-change-large-deletion",
+          "confidence": "medium",
+          "isAgentGenerated": true
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": true,
+        "source": "ai",
+        "detectionMethod": "text-change-large-deletion",
+        "confidence": "medium",
+        "assignmentId": "assignment-1795093786003-prk98an",
+        "aiClassification": "flag"
+      },
+      {
+        "id": 1022,
+        "timestamp": 1795626527048,
+        "tool": "claude-code",
+        "eventType": "code-generated",
+        "linesOfCode": 1,
+        "charactersCount": 1,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "manual": true,
+          "source": "manual-typing",
+          "duration": 2609
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "manual",
+        "detectionMethod": "manual-typing",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an"
+      },
+      {
+        "id": 1023,
+        "timestamp": 1795626575775,
+        "tool": "claude-code",
+        "eventType": "code-generated",
+        "linesOfCode": 1,
+        "charactersCount": 11,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "manual": true,
+          "source": "manual-typing",
+          "duration": 5702
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "manual",
+        "detectionMethod": "manual-typing",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an"
+      },
+      {
+        "id": 1024,
+        "timestamp": 1795627047325,
+        "tool": "claude-code",
+        "eventType": "code-generated",
+        "linesOfCode": 1,
+        "charactersCount": 37,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "manual": true,
+          "source": "manual-typing",
+          "duration": 13827
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "manual",
+        "detectionMethod": "manual-typing",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an"
+      },
+      {
+        "id": 1025,
+        "timestamp": 1795627074929,
+        "tool": "claude-code",
+        "eventType": "code-generated",
+        "linesOfCode": 1,
+        "charactersCount": 1,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "manual": true,
+          "source": "manual-typing",
+          "duration": 1999
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "manual",
+        "detectionMethod": "manual-typing",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an"
+      },
+      {
+        "id": 1026,
+        "timestamp": 1795627105946,
+        "tool": "claude-code",
+        "eventType": "code-generated",
+        "linesOfCode": 1,
+        "charactersCount": 71,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "manual": true,
+          "source": "manual-typing",
+          "duration": 25941
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "manual",
+        "detectionMethod": "manual-typing",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an"
+      },
+      {
+        "id": 1027,
+        "timestamp": 1795627112702,
+        "tool": "claude-code",
+        "eventType": "code-generated",
+        "linesOfCode": 0,
+        "charactersCount": 1,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "manual": true,
+          "source": "manual-typing",
+          "duration": 2039
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "manual",
+        "detectionMethod": "manual-typing",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an"
+      },
+      {
+        "id": 1028,
+        "timestamp": 1795627127845,
+        "tool": "claude-code",
+        "eventType": "code-generated",
+        "linesOfCode": 1,
+        "charactersCount": 43,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "manual": true,
+          "source": "manual-typing",
+          "duration": 13598
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "manual",
+        "detectionMethod": "manual-typing",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an"
+      },
+      {
+        "id": 1029,
+        "timestamp": 1795627138112,
+        "tool": "claude-code",
+        "eventType": "code-generated",
+        "linesOfCode": 1,
+        "charactersCount": 11,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "manual": true,
+          "source": "manual-typing",
+          "duration": 4723
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "manual",
+        "detectionMethod": "manual-typing",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an"
+      },
+      {
+        "id": 1030,
+        "timestamp": 1795627150192,
+        "tool": "claude-code",
+        "eventType": "code-generated",
+        "linesOfCode": 1,
+        "charactersCount": 32,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "manual": true,
+          "source": "manual-typing",
+          "duration": 10229
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": false,
+        "source": "manual",
+        "detectionMethod": "manual-typing",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an"
+      },
+      {
+        "id": 1031,
+        "timestamp": 1795627167478,
+        "tool": "ai",
+        "eventType": "code-generated",
+        "linesOfCode": 119,
+        "linesRemoved": 0,
+        "linesChanged": 119,
+        "charactersCount": 4448,
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "language": "markdown",
+        "metadata": {
+          "source": "external-file-change",
+          "detectionMethod": "external-file-change",
+          "confidence": "high",
+          "isAgentMode": true,
+          "isAgentGenerated": true
+        },
+        "reviewQuality": null,
+        "isReviewed": false,
+        "isAgentMode": true,
+        "agentSessionId": "agent-session-1795627167479-d4b1d3lej",
+        "source": "ai",
+        "detectionMethod": "external-file-change",
+        "confidence": "high",
+        "assignmentId": "assignment-1795093786003-prk98an",
+        "aiClassification": "prohibited",
+        "policyViolation": "agentic-use"
       }
     ],
     "fileReviews": [
+      {
+        "filePath": "c:/Users/USERR/web-infra_playing_with_apis/README.md",
+        "date": "2026-11-25",
+        "tool": "ai",
+        "reviewQuality": "thorough",
+        "reviewScore": 100,
+        "isReviewed": false,
+        "linesGenerated": 245,
+        "linesChanged": 251,
+        "linesSinceReview": 119,
+        "linesAdded": 119,
+        "linesRemoved": 0,
+        "charactersCount": 9125,
+        "agentSessionId": "agent-session-1795627167479-d4b1d3lej",
+        "isAgentGenerated": true,
+        "wasFileOpen": false,
+        "firstGeneratedAt": 1795626367135,
+        "totalReviewTime": 162192,
+        "language": "markdown",
+        "modificationCount": 3,
+        "totalTimeInFocus": 834514,
+        "scrollEventCount": 2,
+        "cursorMovementCount": 1,
+        "editsMade": false,
+        "lastOpenedAt": 1795627205270,
+        "reviewSessionsCount": 0,
+        "reviewedInTerminal": false
+      },
       {
         "filePath": "c:/Users/USERR/web-infra_playing_with_apis/index.html",
         "date": "2026-11-25",
@@ -22456,11 +22826,11 @@
         "isAgentGenerated": true,
         "wasFileOpen": false,
         "firstGeneratedAt": 1795624492014,
-        "lastReviewedAt": 1795624703156,
+        "lastReviewedAt": 1795625153479,
         "totalReviewTime": 90630,
         "language": "html",
         "modificationCount": 1,
-        "totalTimeInFocus": 90630,
+        "totalTimeInFocus": 243519,
         "scrollEventCount": 3,
         "cursorMovementCount": 1,
         "editsMade": false,
@@ -22537,6 +22907,11 @@
         "startTime": 1795620342081,
         "endTime": 1795624450033,
         "durationSeconds": 4107
+      },
+      {
+        "startTime": 1795624492014,
+        "endTime": 1795626367135,
+        "durationSeconds": 1875
       }
     ]
   },
@@ -22634,9 +23009,9 @@
   ],
   "studentIdentifier": "h.umwamikaz@alustudent.com",
   "repoUrl": "https://github.com/humwamikaz-ops/web-infra_playing_with_apis",
-  "repoHeadCommit": "04a816110e3b3900a5d35fcbf6603f65acd5a9cf",
+  "repoHeadCommit": "fc170df1f007b16f512deb7a50d54bf5fb3b9d7d",
   "integrity": {
     "algorithm": "sha256",
-    "hash": "4b49eee9bd691bf6ef0bd568ceb5310acced601ad01d538eb8d8d0281d8689d5"
+    "hash": "f6c7efd482a5212bd4c50f78061f5ccacd6cba09fb84debcc43902cb15777f7b"
   }
 }
