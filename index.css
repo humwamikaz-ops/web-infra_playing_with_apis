@@ -72,11 +72,16 @@ section h1 {
     font-weight: 600;
     line-height: 1.1;
     color: white;
-    background: url("fire.gif") bottom center /cover;
+    background: url("fire.gif") center /cover;
+    background-color: #fff;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     transform: translate(0);
+}
+.tagline {
+    margin: 0.5rem 0 0;
+    color: #D8F3DC;
 }
 #explore {
     text-align: left;
@@ -92,6 +97,13 @@ section h1 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 
 }
+.sr-only {
+    position:absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
 #status {
     margin: 0 0 16px;
     font-size: 0.95rem;
@@ -105,6 +117,7 @@ section h1 {
 }
 #countries > div,
 .country-card {
+    cursor: pointer;
     background: #1B4332;
     border-radius: 10px;
     overflow: hidden;
@@ -135,6 +148,26 @@ footer {
     justify-content: center;
     color:white;
     font-size: 0.9rem;
+}
+dialog {
+    background: #1B4332;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 420px;
+    width: 90%;
+}
+dialog::backdrop { 
+    background: rgba(0, 0, 0, 0.6);
+}
+#detail-close {
+    float: right;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 .about-card {
     background: #1B4332;

@@ -18,9 +18,11 @@
         <main>
             <section>
                 <h1>KNOW YOUR COUNTRIES</h1>
+                <p class="tagline">Compare countries by region, population and area.</p>
             </section>
             <section id="explore">
                 <div class="controls">
+                    <label for="search" class="sr-only">Search countries</label>
                     <input type="text" id="search" placeholder="Search by country name">
                     <select id="region">
                         <option value="">All regions</option>
@@ -38,12 +40,16 @@
 
                     </select>
                 </div>
-                <p id="status"></p>
+                <p id="status" aria-live="polite"></p>
                 <div id="countries"></div>
                     
             </section>
         </main>
         <footer><p>© 2026 Country. All Rights Reserved 🙇</p></footer>
+        <dialog id="detail">
+            <button id="detail-close" aria-label="Close">X</button>
+            <div id="detail-body"></div>
+        </dialog>
         <script src="config.js"></script>
         <script src="index.js"></script>
     </body>

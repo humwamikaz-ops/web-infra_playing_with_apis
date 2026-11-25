@@ -4,9 +4,30 @@ var Region = document.getElementById("region");
 var Sorting = document.getElementById("sort");
 var ElementStatus = document.getElementById("status");
 const countrygrid = document.getElementById("countries");
-const CACHE_KEY = "countries_cache_v1";
+const detail =document.getElementById("detail");
+const detailBody = document.getElementById("detail-body");
+const CACHE_KEY = "countries_cache_v2";
 const CACHE_MS = 24 * 60 * 60 * 1000;
 let allCountries = [];
+
+function listText(list) {
+    return Array.isArray(list) && list.length ? list.join(", ") : "N/A";
+}
+function openDetail(country) {
+    const name = country.names?.common || "Unknown";
+    detailBody.innerHTML = `
+    <h2>${name}</h2>
+    <p><strong>Capital:</strong> ${country.capitals?.[0]?.name || "N/A"}</p>
+    <p><strong>Regoin:</strong> ${country.region || "N/A"} (${country.subregion || "N/A"})</p>
+    <p><strong>Continent:</strong> ${listText(country.continents)}</p>
+    <p><strong>Population:</strong> ${typeof country.population === "number" ? country.population.toLocaleString() : "N/A"}</P
+    <p><strong>Landlocked:</strong> ${country.landlocked === true ? "Yes" : country.landlocked === false ? "No" : "N/A"}</p>
+    <p><strong>Calling code:</strong> ${listText(country.calling_codes)}</p>
+    <p><strong>Timezones:</strong> ${listText(country.timezones)}</p>
+    `;
+    detail.showModal();
+}
+detail.getElementById("detail-close").addEventListener("click", () => detail.closest());
 async function getCountries () {
     try {
         const saved = JSON.parse(localStorage.getItem(CACHE_KEY));
@@ -21,7 +42,7 @@ async function getCountries () {
     return list;
 }
 async function fetchAllCountries() {
-    const fields = "names.common,region,population,area.kilometers,capitals,flag.url_png,flag.description";
+    const fields = "names.common,region,population,area.kilometers,capitals,continents,timezones,calling_codes,landlocked,flag.url_png,flag.description";
     let offset = 0;
     let all = [];
     let more = true;
@@ -46,9 +67,11 @@ async function fetchCountries() {
     }
     catch (error) {
         console.log("Error:", error);
-        ElementStatus.textContent = "Could not fetch countries.  Try again later😓🙇🙏";
+        ElementStatus.innerHTML = `${describeError(error)} <button id="retry">Try again later 😕🙇🙏</button>`;
+        document.getElementById("retry").addEventListener("click", fetchCountries);
     }
 }
+
 function renderCountries(countries) { 
     countrygrid.innerHTML = "";
     if (countries.length === 0) {
@@ -79,9 +102,18 @@ function renderCountries(countries) {
 
         </div>
         `;
+        card.addEventListener("click", () => openDetail(country));
         countrygrid.appendChild(card);
 
     });
+}
+function describeError(error) {
+    const msg = String(error.message || "");
+    if (msg.includes("401")) return "API key rejected";
+    if (msg.includes("403")) return "access blocked: monthly limit may have reached";
+    if (msg.includes("429")) return "A lot of requests. Please bear with us a feww seconds and try again🙇";
+    if (error instanceof TypeError) return "Could not reach the Api.  check connection";
+    return "could not load countries";
 }
 function updateDisplay() {
     const query = (LookForInput?.value || "").trim().toLowerCase();
